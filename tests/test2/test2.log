@@ -1,0 +1,12 @@
+Failed To Assemble
+ERRORS :- 
+Error at Line 4 : Duplicate label Found - "label"
+Error at Line 5 : No  label as "nonesuch" has been Declared 
+Error at Line 6 : label Name not Found 
+Error at Line 7 : oprd Missing 
+Error at Line 8 : Unexpected oprd Found  
+Error at Line 9 : Extra oprd Present
+Error at Line 9 : label Name not Found 
+Error at Line 10 : Incorrect label Name 
+Error at Line 11 : Invalid Mnemonic 
+Error at Line 12 : Invalid Mnemonic 

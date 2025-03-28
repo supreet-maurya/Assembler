@@ -1,0 +1,154 @@
+AUTHOR:  Supreet Maurya 2201CS70
+
+Files:
+*All the files i submitted, asm.cpp and emu.cpp and claims.txt, have my name and student id at the start, along with a declaration of authorship.
+
+The evidence for Assembler including the output files from the 5 test examples has also been uploaded. They are test1, test2, test3 , test_min , test_sum , bubble.asm.
+Both of my c++ programs did not show any errors and warnings when i compiled it with
+g++ asm.cpp -o a1
+./a1 testing_file.asm
+
+Program format and structure:
+
+1. The assembler:
+
+    * with two data structures to store respectively labels and mnemonic table with expected operands.
+    * uses a single routine for both passes.
+    * detects label erros.
+    * consistent and sensible formatting with sensible program structure. 
+    * sensible variable, function & type names with explanatory comments.
+	    * advanced listing file.
+		* assembles test programs.
+	  * can implements and demonstrates the instruction SET.
+
+2. The emulator :
+		* with three data structures to store respectively memory, mnemonic table with expected operands
+		  and a linked list structure word.
+    * loads object file, 
+    * by giving the instructions like "-befor/-after" , the program can produce memory dump before/after execution.
+    * by giving the instruction like "-trace", the program prints the result of program executed.
+    * detects errant programs.
+
+Testing:
+1. The assembler:
+
+I have tested  4 examples shown as bellow. The errors only occurred in the file test2.asm and 
+the program immediately stopped on the second pass. 
+
+The others were tested without any errors detected and produced three output files, listing file, 
+error log file and machine readable object file, for each example. 
+
+After comparing the listing files and object file of algo1.asm , algo1.l, algo2.l algo2.o 
+with the implemented result given on the assignment, both of them show no difference 
+from those provided( if there is different  that is fine too) 
+ 
+
+1.
+#Input: asm test1.asm
+#Output: 
+a. test1.l 
+b. test1.log (without any error messages) 		
+c. test1.o
+
+Warnings 
+Warning at Line -1 : HALT Instruction Not Found! 
+Warning at Line 0 : Label with Name "label" not used but Declared! 
+
+2.
+#Input:asm test2.asm
+#Output: 
+ 
+a. test2.log (without error messages shown as below but also in log file)
+
+Failed To Assemble
+ERRORS :- 
+Error at Line 4 : Duplicate Label Found - "label"
+Error at Line 5 : No  Label as "nonesuch" has been Declared! 
+Error at Line 6 : Valid Number or label Name not Found! 
+Error at Line 7 : Operand Missing! 
+Error at Line 8 : Unexpected Operand Found ! 
+Error at Line 9 : There is a Extra Operand! 
+Error at Line 9 : Valid Number or label Name not Found! 
+Error at Line 10 : Incorrect Label Name!
+Error at Line 11 : Invalid Mnemonic! 
+Error at Line 12 : Invalid Mnemonic! 
+
+3.
+#Input:asm test3.asm
+#Output: 
+a. test3.l 
+b. test3.log (without any error messages)
+c. test3.o
+
+Warnings -- 
+Warning at Line -1 : HALT Instruction Not Found! 
+
+4.
+#Input:asm test_min.asm
+#Output: 
+a. test_min.l 
+b.  (without any error messages)
+c. test_min.0
+
+
+5.
+#Input:asm test_sum.asm
+#Output: 
+a. test_sum.l 
+b.  (without any error messages)
+c. test_sum.o
+
+
+6.
+#Input:asm bubble.asm
+#Output: 
+a. bubble.l 
+b.  (without any error messages)
+c. bubble.o
+
+2. The emulator:
+
+I have tested 5 examples shown as below. The errors only occurred in the file test1.o and 
+the program immediately stopped with an error message on the screen. 
+There was no object file for test2.asm as it contained errors!
+
+The others were tested without any errors detected and produced excution data both on the screen and 
+output text file for each example according to the usage instruction. 
+
+After running the bin file given, the trace data are the same as 
+the implemented result from my own program.
+
+1)
+#Input:emu -trace test2.o
+#Output: test2.trace
+ERROR- INFINITE LOOP DETECTED
+
+2)
+#Input: emu -trace test_sum.o
+#Output: test_sum.trace
+
+3)
+#Input: emu -trace test3.asm
+#Output: test3.trace 
+The instruction Rather Than Set and Data were Run Successfully 
+
+ERROR-
+Invalid Mnemonic Found Due to not Use of Set in Emulator
+
+4)
+#Input: emu -trace test_min.o
+#Output: test_min.trace
+
+-- Total 7 lines of Instructions Completed
+
+5)
+#Input: emu -trace bubble.o
+#Output: bubble.trace
+
+-- Total 2426 lines of Instruction Completed
+
+All Files and Photo Proofs are sorted in this Folder
+
+Sample Tests - test1,test2,test3
+Algorithms : test_min , test_sum, bubble
+
